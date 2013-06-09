@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="utf-8" />
+	<title>YouTube Data API v3 Sample</title>
+    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.1.0/pure-min.css">
+</head>
+<body>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
+    <div id="ytapiplayer-wrapper">
+    	<div id="ytapiplayer">
+	    	You need Flash player 8+ and JavaScript enabled to view this video.
+    	</div>
+    </div>
+    <div ng-controller="searchCtrl">
+    	<input type="text" ng-model="searchText"></input>
+    	<button ng-click="search()">Search</button>
+
+    	<div>
+    		<ul>
+    			<li ng-repeat="items">
+    				<p>{{snippet.title}}</p>
+    				<img ng-src="{{snippet.thumbnails.default}}">
+    			</li>
+    		</ul>
+    	</div>
+
+    	<pre>{{searchResult | json}}</pre>
+    </div>
+    <script src="auth.js"></script>
+    <script src="//apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script type="text/javascript" src="search.js"></script>
+</body>
+</html>
