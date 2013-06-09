@@ -1,0 +1,4 @@
+YouTubePlayer
+=============
+
+YouTubeAPIとAngularJSを使ったプレイヤーアプリケーション
